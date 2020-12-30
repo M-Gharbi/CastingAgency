@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Casting Agency</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+  </head>
+
+  <body>
+        <!-- Navigation -->
+      <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+          <div class="container" style="font-size:20px;">
+              <a class="navbar-brand" href="#">Casting Agency</a>       
+          </div>
+      </nav>
+
+
+
+
+
+    <div class="jumbotron container">
+    <div class="text-center features-boxed">
+      <div class="container">
+        <div class="intro">
+          <h2 class="display-4 text-monospace text-center text-info shadow-none">
+            Casting Agency<br />
+          </h2>
+          <br/><br/>
+          <p class="text-center" >
+            The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.<br/>
+          </p>
+          
+          <br/>
+          <h1 class="text-center text-info">&nbsp;Your TOKEN<br /></h1>          <br/>
+
+        </div>
+      </div>
+
+      <textarea class="container bg-white border-info shadow-sm form-control-lg" id="Token" cols= 100% readonly></textarea>
+      <br/>
+      <br/>
+      <a class="container btn btn-primary btn-block btn-lg text-center" style="max-width:30%;" role="button" onclick="copyToken()">Copy Token</a>
+
+    </div>
+    </div>
+    <script>
+      function copyToken() {
+        var getToken = document.getElementById("Token");
+        getToken.select();
+        document.execCommand("copy").trim();
+      }
+
+        const fragment = window.location.hash.substr(1).split('&')[0].split('=');
+        console.log(fragment[1]);
+        document.getElementById("Token").innerHTML = fragment[1]
+    </script>
+  </body>
+</html>
